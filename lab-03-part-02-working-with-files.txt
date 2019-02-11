@@ -53,7 +53,7 @@ $ touch bar.txt
 Copy and paste the output below.
 ----------
 
-
+foo.txt
 
 ==========
 9. Create a copy of bar.txt called baz.txt and then list the files again.
@@ -61,21 +61,27 @@ Copy and paste the output below.
 
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
+touch bar.txt
+cp bar.txt baz.txt
 
-
-
+bar.txt	baz.txt	foo.txt
 ==========
 10. Delete the file called bar.txt and then list the files again.
 
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+rm bar.txt
+baz.txt	foo.txt
+
+
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
 
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
-
+mv foo.txt qux.txt
+baz.txt	qux.txt
 
 
 ==========
@@ -90,16 +96,16 @@ Write the command that you used to move the file.  Copy and paste the output of 
 
 Write out the command that you used and what happened.
 ----------
-
-
+rmdir my_files/
+rmdir: my_files/: Directory not empty
 
 ==========
 14. Try removing the directory called my_files using rm.
 
 Write out the command that you used and what happened.
 ----------
-
-
+rm my_files/
+rm: my_files/: is a directory
 
 ==========
 15. MAKE SURE YOU'RE IN THE mtec1002-lab-03 directory!  
@@ -109,7 +115,7 @@ Force the removal of the directory and files using the -rf flag
 $ rm -rf my_files
 ----------
 
-
+no outputa
 
 ==========
 16. There's a txt file version of a book located in the mtec1002-lab-03 folder.  It is in the following directory if you're in the lab folder:
@@ -121,7 +127,7 @@ Use the command called cat on the file to show its contents.
 Describe what happened below.
 ----------
 
-
+it seems to have read out the entire contents of the text file
 
 ==========
 17. That was a lot of text.  Let's find ways to limit it.  Using the same file...
@@ -132,8 +138,17 @@ Use the command, head, on the file to show the contents of the beginning of the 
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
+head books/other/pg1232.txt 
+
+The Project Gutenberg EBook of The Prince, by Nicolo Machiavelli
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
 
 
+Title: The Prince
 
 ==========
 18. Using the same file again!
@@ -144,8 +159,16 @@ Use tail on the file to show the contents of the end of the file.
 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
+tail books/other/pg1232.txt 
 
+Most people start at our Web site which has the main PG search facility:
 
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
 
 ==========
 19. Using the same file...
@@ -157,7 +180,10 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
 
+less books/other/pg1232.txt
+more books/other/pg1232.txt
 
+Q quits out and spacebar jumps a lot forward
 
 ==========
 20. Describe what situations you would use the following commands for viewing files: less, more, cat, tail, head
@@ -171,8 +197,10 @@ Write the command that you used below.  Describe what spacebar and q does after 
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
 
-
-
+52639
+wc books/other/pg1232.txt
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
+5063
+wc books/other/pg1232.txt 
